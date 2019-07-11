@@ -4,7 +4,7 @@ replicaCount: 1
 revisionHistoryLimit: 1
 image:
   repository: ibmcase/greeting
-  tag: v1.0.0
+  tag: b5811bb9
   pullPolicy: IfNotPresent
   resources:
     requests:
