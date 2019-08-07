@@ -3,7 +3,7 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: ibmcase/greeting
+  repository: us.icr.io/catalyst_cloudnative/greeting
   tag: 2
   pullPolicy: IfNotPresent
   resources:
