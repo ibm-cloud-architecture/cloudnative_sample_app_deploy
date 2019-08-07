@@ -34,3 +34,5 @@ spec:
             value: "{{ .Values.service.servicePort }}"
           - name: APPLICATION_NAME
             value: "{{ .Release.Name }}"
+      imagePullSecrets:
+      - name: test-us-icr-io
