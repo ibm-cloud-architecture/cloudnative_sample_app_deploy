@@ -33,4 +33,6 @@ spec:
         env:
           - name: PORT
             value: "{{ .Values.service.servicePort }}"
+      imagePullSecrets:
+      - name: test-us-icr-io
 {{ end }}
