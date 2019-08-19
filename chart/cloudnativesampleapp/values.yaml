@@ -4,7 +4,7 @@ replicaCount: 1
 revisionHistoryLimit: 1
 image:
   repository: us.icr.io/catalyst_cloudnative/greeting
-  tag: 1
+  tag: 3
   pullPolicy: IfNotPresent
   resources:
     requests:
