@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "cloudnativesampleapp-service"
+  labels:
+    chart: "cloudnativesampleapp-1.0.0"
+spec:
+  type: NodePort
+  ports:
+  - name: http
+    port: 9080
+  selector:
+    app: "cloudnativesampleapp-selector"
