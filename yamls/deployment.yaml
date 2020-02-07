@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: cloudnativesampleapp
-        image: docker.io/ibm-cloud-architecture/cloudnative_sample_app:my-tag
+        image: ibmcase/greeting:1
         imagePullPolicy: IfNotPresent
         readinessProbe:
           httpGet:
