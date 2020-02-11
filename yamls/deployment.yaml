@@ -34,5 +34,3 @@ spec:
           value: "8080"
         - name: APPLICATION_NAME
           value: cloudnativesampleapp
-      imagePullSecrets:
-      - name: regcred
