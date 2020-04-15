@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    chart: cloudnativesampleapp-1.0.0
+  name: cloudnative-sample
+  namespace: default
+spec:
+  host: cloudnative-sample-default.apps-crc.testing
+  port:
+    targetPort: 9080
+  to:
+    kind: Service
+    name: cloudnativesampleapp-service

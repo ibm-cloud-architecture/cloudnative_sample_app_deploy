@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudnativesampleapp-deployment
+  labels:
+    chart: cloudnativesampleapp-1.0.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudnativesampleapp-selector
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        app: cloudnativesampleapp-selector
+        version: current
+    spec:
+      containers:
+      - name: cloudnativesampleapp
+        image: ibmcase/greeting:1
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9080
+            name: http
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 9080
+          initialDelaySeconds: 60
+        resources:
+          requests:
+            cpu: 200m
+            memory: 300Mi
+        env:
+        - name: PORT
+          value: "9080"
+        - name: APPLICATION_NAME
+          value: cloudnativesampleapp
