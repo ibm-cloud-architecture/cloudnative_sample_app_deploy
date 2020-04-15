@@ -20,6 +20,9 @@ spec:
       - name: cloudnativesampleapp
         image: ibmcase/greeting:1
         imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9080
+            name: http
         readinessProbe:
           httpGet:
             path: /actuator/health
@@ -31,6 +34,6 @@ spec:
             memory: 300Mi
         env:
         - name: PORT
-          value: "8080"
+          value: "9080"
         - name: APPLICATION_NAME
           value: cloudnativesampleapp
