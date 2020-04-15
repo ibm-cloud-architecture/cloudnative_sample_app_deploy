@@ -21,8 +21,8 @@ spec:
 {{ else }}
         readinessProbe:
           httpGet:
-            path: /health
-            port: 8080
+            path: /actuator/health
+            port: {{ .Values.service.servicePort }}
           initialDelaySeconds: 20
 {{ end }}
         resources:
